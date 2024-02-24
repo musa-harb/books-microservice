@@ -35,7 +35,7 @@ An example of a book search for :
 'http://127.0.0.1:50000/?keyword= + "agile" '
 ...
 
-The resturned results will be a JSON object which contains an array of books object:
+The returned results will be a JSON object which contains an array of books object:
 
 ...
 [
@@ -83,6 +83,7 @@ The resturned results will be a JSON object which contains an array of books obj
       textSnippet: 'No matter what your role or level of experience, this book provides a foundational understanding that can be used to start or enhance any Agile effort.'
     }
   },.......
+]
 ...
 #UML Sequence Diagram
 ![alt text](UML-seq.png)
