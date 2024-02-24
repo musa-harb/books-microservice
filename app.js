@@ -9,7 +9,7 @@ const app = express();
 
 const PORT = 50000;
 
-const MAXRESULTS = 40; // 40 is max allowed by Google Books api, change this number to the number of results you want up to 40.
+const MAXRESULTS = 5; // 40 is max allowed by Google Books api, change this number to the number of results you want up to 40.
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -22,7 +22,6 @@ async function searchBooks(keyword) {
   const options = { method: "GET" };
   const response = await fetch(url, options);
   const searchResults = await response.json();
-  //console.dir(searchResults.items);
   return searchResults;
 }
 
@@ -47,7 +46,6 @@ async function sortResult(data) {
       snippet: book.searchInfo,
     });
   }
-  console.log(books);
   return books;
 }
 
