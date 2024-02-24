@@ -5,7 +5,9 @@ REQUEST DATA:
 To request data, send a GET request to:
 http://localhost:PORT/?keyword="search query"
 
-The search query is the search keyword that will be used to 
+--Where PORT is the port number on your local machine.
+
+--The search query is the search keyword that will be used to 
 search Google Books API.
 
 The request should include a query with "keyword"
