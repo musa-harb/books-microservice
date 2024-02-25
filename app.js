@@ -1,7 +1,7 @@
 //place the app.js, package-lock.json, and package.json in a directory
 //run 'npm install' (need to install node and npm on your machine first if you don't have them installed already)
 //to run the server: npm start
-//to send a query: http://localhost:PORT/?keyword="search query" 
+//to send a query: http://localhost:PORT/?keyword="search query"
 
 const express = require("express");
 
@@ -30,9 +30,9 @@ async function searchBooks(keyword) {
 //feel free to edit or delete this function if you prefer to use
 //the search results directly and edit it on your end.
 async function sortResult(data) {
-  const books = [];
+  const booksResults = { numberOfResults: data.length, books: [] };
   for (const book of data) {
-    books.push({
+    booksResults.books.push({
       title: book.volumeInfo.title,
       author: book.volumeInfo.authors,
       description: book.volumeInfo.description,
@@ -46,10 +46,10 @@ async function sortResult(data) {
       snippet: book.searchInfo,
     });
   }
-  return books;
+  return booksResults;
 }
 
-//This function uses the selfLink url for each book to get images of different 
+//This function uses the selfLink url for each book to get images of different
 //sizes. The issue with Google books API is that the search query only returns
 // a link to a  small thumbnail. To get all image sizes of the book cover, you need
 //to query the book info link. This slows down the results, it took about 3 seconds
