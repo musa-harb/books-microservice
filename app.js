@@ -9,7 +9,7 @@ const app = express();
 
 const PORT = 50000;
 
-const MAXRESULTS = 5; // 40 is max allowed by Google Books api, change this number to the number of results you want up to 40.
+const MAXRESULTS = 20; // 40 is max allowed by Google Books api, change this number to the number of results you want up to 40.
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -53,8 +53,8 @@ async function sortResult(data) {
 //sizes. The issue with Google books API is that the search query only returns
 // a link to a  small thumbnail. To get all image sizes of the book cover, you need
 //to query the book info link. This slows down the results, it took about 3 seconds
-//with 40 search results on my end. If you want, you can have this fetch done on the front end
-//if the user wants to see the book's details and use the small thumbnail in the results list, just a suggestion.
+//with 40 search results on my end. I can add another endpoint to get the cover images
+//when the user click on one of the search results to view the book details.
 async function getImages(bookInfoUrl) {
   const options = { method: "GET" };
   const response = await fetch(bookInfoUrl, options);
