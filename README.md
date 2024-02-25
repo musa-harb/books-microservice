@@ -20,7 +20,7 @@ npm start
 
 The server will be on localhost port 50000 (http://127.0.01:50000)
 
-#Requesting Data
+# Requesting Data
 The endpoint to search for book can be called by sending a GET request to http://127.0.0.1:50000/?keyword= + "search string"
 
 The following is an example of GET request:
@@ -31,7 +31,7 @@ method: "GET",
 ```
 
 
-#Receiving Data:
+# Receiving Data:
 The microservice will return a JSON response which includes an array of all books.
 
 An example of a book search for :
@@ -74,5 +74,5 @@ The returned results will be a JSON object which contains an array of books obje
   ]
 }
 ```
-#UML Sequence Diagram
+# UML Sequence Diagram
 ![alt text](UML-seq.png)
