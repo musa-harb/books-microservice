@@ -29,10 +29,10 @@ async function searchBooks(keyword) {
 //and put it in an arr of objects with the following properties,
 //feel free to edit or delete this function if you prefer to use
 //the search results directly and edit it on your end.
-async function sortResult(data) {
-  const booksResults = { numberOfResults: data.length, books: [] };
-  for (const book of data) {
-    booksResults.books.push({
+async function sortResult(searchResults) {
+  const books = [];
+  for (const book of searchResults) {
+    books.push({
       title: book.volumeInfo.title,
       author: book.volumeInfo.authors,
       description: book.volumeInfo.description,
@@ -46,7 +46,7 @@ async function sortResult(data) {
       snippet: book.searchInfo,
     });
   }
-  return booksResults;
+  return books;
 }
 
 //This function uses the selfLink url for each book to get images of different
