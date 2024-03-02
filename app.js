@@ -27,8 +27,8 @@ async function searchBooks(keyword) {
 
 //This function takes the books search results (the items property)
 //and put it in an arr of objects with the following properties,
-//feel free to edit or delete this function if you prefer to use
-//the search results directly and edit it on your end.
+//let me know if you want me to add/edit properties or you want me to delete this function
+//if you prefer to receive the search results directly.
 async function sortResult(searchResults) {
   const books = [];
   for (const book of searchResults) {
